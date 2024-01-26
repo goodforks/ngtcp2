@@ -59,6 +59,8 @@ void ngtcp2_strm_init(ngtcp2_strm *strm, int64_t stream_id, uint32_t flags,
   strm->rx.last_offset = 0;
   strm->rx.max_offset = strm->rx.unsent_max_offset = strm->rx.window =
       max_rx_offset;
+  strm->rx.final_offset = 0;
+  strm->rx.reliable_offset = 0;
   strm->mem = mem;
   strm->stream_id = stream_id;
   strm->stream_user_data = stream_user_data;
