@@ -24,6 +24,7 @@ RUN if [ "$TARGETPLATFORM" = "linux/amd64" ]; then export WSSLFLAGS="--enable-ae
     cd wolfssl && autoreconf -i && \
     ./configure --disable-dependency-tracking --enable-static --enable-all \
         --enable-harden --enable-keylog-export --disable-ech $WSSLFLAGS \
+        --enable-debug \
         --host=$(xx-clang --print-target-triple) \
         CC=$(xx-info)-gcc-12 \
         CXX=$(xx-info)-g++-12 && \
