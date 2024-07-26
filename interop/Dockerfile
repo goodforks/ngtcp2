@@ -67,7 +67,7 @@ FROM martenseemann/quic-network-simulator-endpoint:latest
 
 RUN apt-get update && \
     DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
-        mime-support
+        media-types
 
 COPY --from=build --link /usr/local/bin/wsslclient /usr/local/bin/wsslserver \
     /usr/local/bin/h09wsslclient /usr/local/bin/h09wsslserver /usr/local/bin/
