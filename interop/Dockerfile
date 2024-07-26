@@ -11,6 +11,7 @@ RUN apt-get update && \
         apt-get install -y --no-install-recommends \
         git clang-18 make autoconf automake autotools-dev libtool dpkg-dev \
         pkg-config ca-certificates && \
+    xx-info debian-arch && \
     DEBIAN_FRONTEND=noninteractive \
         xx-apt-get install -y --no-install-recommends \
         gcc-14 g++-14 libc6-dev binutils \
