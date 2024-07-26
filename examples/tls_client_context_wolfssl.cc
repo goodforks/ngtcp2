@@ -105,6 +105,8 @@ int new_session_cb(WOLFSSL *ssl, WOLFSSL_SESSION *session) {
 
 int TLSClientContext::init(const char *private_key_file,
                            const char *cert_file) {
+  wolfSSL_Debugging_ON();
+
   ssl_ctx_ = wolfSSL_CTX_new(wolfTLSv1_3_client_method());
   if (!ssl_ctx_) {
     std::cerr << "wolfSSL_CTX_new: "
